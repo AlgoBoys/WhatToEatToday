@@ -1,0 +1,66 @@
+//====== CREATE SCRIPT ============
+CREATE TABLE DC_Table
+(
+dc_Id int NOT NULL PRIMARY KEY  AUTO_INCREMENT,
+dc_Name varchar(55) NOT NULL UNIQUE,
+dc_Location varchar(55) NOT NULL UNIQUE,
+dc_image_url varchar(150) NOT NULL UNIQUE
+);
+
+CREATE TABLE Ingredients_Table
+(
+ing_Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ing_Name varchar(155) NOT NULL UNIQUE,
+ing_description varchar(255)
+);
+
+CREATE TABLE Vendor_Table
+(
+vend_Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+vend_Name varchar(155) NOT NULL UNIQUE,
+vend_Description varchar(255) NOT NULL,
+Is_Active BOOLEAN NOT NULL DEFAULT FALSE,
+dc_Id int,
+FOREIGN KEY (dc_Id) REFERENCES DC_Table(dc_Id)
+);
+
+CREATE TABLE Menu_Table
+(
+menu_Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+menu_Name varchar(155) NOT NULL UNIQUE,
+menu_Description varchar(255) NOT NULL,
+menu_price int,
+Is_Lunch BOOLEAN NOT NULL DEFAULT TRUE,
+Is_Veg BOOLEAN NOT NULL DEFAULT TRUE,
+Is_Active BOOLEAN NOT NULL DEFAULT FALSE,
+menu_image_url varchar(150) NOT NULL UNIQUE,
+vend_Id int,
+FOREIGN KEY (vend_Id) REFERENCES Vendor_Table(vend_Id)
+);
+
+CREATE TABLE Menu_Ingredients_Quantity_Table
+(
+miq_Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+miq_Ingredients_Quantity varchar(350) NOT NULL,
+menu_Id int,
+FOREIGN KEY (menu_Id) REFERENCES Menu_Table(menu_Id)
+);
+
+//----------------------------------
+//======= INSERT SCRIPT ============
+//-----------------------------------
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Bangalore Infosys - DC', 'Bangalore', '');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Chennai Infosys - DC', 'Chennai', '1');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Pune Infosys - DC', 'Pune', '3');
+ 
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Bhubaneswar Infosys - DC', 'Bhubaneswar', '4');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Chandigarh Infosys - DC', 'Chandigarh', '5');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Gurgaon Infosys - DC', 'Gurgaon', '6');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Hyderabad Infosys - DC', 'Hyderabad', '7');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Jaipur Infosys - DC', 'Jaipur', '8');
+ 
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Mysuru Infosys - DC', 'Mysuru', '9');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Mangaluru Infosys - DC', 'Mangaluru', '10');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Mumbai Infosys - DC', 'Mumbai', '11');
+insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Thiruvananthapuram Infosys - DC', 'Thiruvananthapuram', '12');
+//--------------------------------------
