@@ -1,5 +1,16 @@
 package com.whattoeattoday.dao;
 
-public class DCDao {
+import java.util.List;
+
+import com.whattoeattoday.model.DCModel;
+
+/**
+ * 
+ * @author ravikson
+ * 
+ */
+public interface DCDao {
+
+	public List<DCModel> getDcList();
 
 }
