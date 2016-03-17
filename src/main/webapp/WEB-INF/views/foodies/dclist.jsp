@@ -51,13 +51,16 @@
 			<tr>
 				<th width="120">DC Name</th>
 				<th width="120">DC Location</th>
-				<th width="60">Image</th>
+				<th width="60">Click On Image to See Vendor List</th>
 			</tr>
 			<c:forEach items="${dclist}" var="dc">
 				<tr>
-					<td>${dc.dc_Name}</td>
-					<td>${dc.dc_Location}</td>
-					<td>${dc.dc_image_url}</td>
+					<td>${dc.dcName}</td>
+					<td>${dc.dcLocation}</td>
+					<td align="right" bgcolor="lightgreen"><a
+						href="<c:url value='vendorlist/${dc.dcId}' />"><img
+							src="<c:url value="/resources/images/${dc.dcImageUrl}"/>"></img>
+					</a></td>
 				</tr>
 			</c:forEach>
 		</table>

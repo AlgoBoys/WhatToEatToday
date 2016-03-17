@@ -1,10 +1,13 @@
 package com.whattoeattoday.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,9 +24,18 @@ public class DCModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int dcId;
 
-	private String dc_Name;
-	private String dc_Location;
-	private String dc_image_url;
+	@Column(name = "dc_Name")
+	private String dcName;
+
+	@Column(name = "dc_Location")
+	private String dcLocation;
+
+	@Column(name = "dc_image_url")
+	private String dcImageUrl;
+
+	// mappedBy refers to the property name of the association on the owner side
+	@OneToMany(mappedBy = "dcModel")
+	private Set<VendorModel> vendors;
 
 	public int getDcId() {
 		return dcId;
@@ -33,28 +45,36 @@ public class DCModel {
 		this.dcId = dcId;
 	}
 
-	public String getDc_Name() {
-		return dc_Name;
+	public String getDcName() {
+		return dcName;
 	}
 
-	public void setDc_Name(String dc_Name) {
-		this.dc_Name = dc_Name;
+	public void setDcName(String dcName) {
+		this.dcName = dcName;
 	}
 
-	public String getDc_Location() {
-		return dc_Location;
+	public String getDcLocation() {
+		return dcLocation;
 	}
 
-	public void setDc_Location(String dc_Location) {
-		this.dc_Location = dc_Location;
+	public void setDcLocation(String dcLocation) {
+		this.dcLocation = dcLocation;
 	}
 
-	public String getDc_image_url() {
-		return dc_image_url;
+	public String getDcImageUrl() {
+		return dcImageUrl;
 	}
 
-	public void setDc_image_url(String dc_image_url) {
-		this.dc_image_url = dc_image_url;
+	public void setDcImageUrl(String dcImageUrl) {
+		this.dcImageUrl = dcImageUrl;
+	}
+
+	public Set<VendorModel> getVendors() {
+		return vendors;
+	}
+
+	public void setVendors(Set<VendorModel> vendors) {
+		this.vendors = vendors;
 	}
 
 }

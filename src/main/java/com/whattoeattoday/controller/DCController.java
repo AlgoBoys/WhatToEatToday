@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.whattoeattoday.service.DCService;
 
 @Controller
-@RequestMapping("/foodies")
 public class DCController {
 
 	private DCService dcService;
@@ -19,10 +18,10 @@ public class DCController {
 		this.dcService = dcService;
 	}
 
-	@RequestMapping(value = "/dclist", method = RequestMethod.GET)
+	@RequestMapping(value = "/foodies/dclist", method = RequestMethod.GET)
 	public String getDcList(ModelMap model) {
 		model.addAttribute("dclist", this.dcService.getDcList());
-		return "dclist";
+		return "foodies/dclist";
 	}
 
 }

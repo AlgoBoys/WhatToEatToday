@@ -49,18 +49,27 @@ FOREIGN KEY (menu_Id) REFERENCES Menu_Table(menu_Id)
 //----------------------------------
 //======= INSERT SCRIPT ============
 //-----------------------------------
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Bangalore Infosys - DC', 'Bangalore', '');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Chennai Infosys - DC', 'Chennai', '1');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Pune Infosys - DC', 'Pune', '3');
- 
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Bhubaneswar Infosys - DC', 'Bhubaneswar', '4');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Chandigarh Infosys - DC', 'Chandigarh', '5');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Gurgaon Infosys - DC', 'Gurgaon', '6');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Hyderabad Infosys - DC', 'Hyderabad', '7');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Jaipur Infosys - DC', 'Jaipur', '8');
- 
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Mysuru Infosys - DC', 'Mysuru', '9');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Mangaluru Infosys - DC', 'Mangaluru', '10');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Mumbai Infosys - DC', 'Mumbai', '11');
-insert into DC_Table (dc_Name, dc_Location, dc_image_url) values ('Thiruvananthapuram Infosys - DC', 'Thiruvananthapuram', '12');
-//--------------------------------------
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (1,'Infosys Bangalore','Bangalore','dc-images/bangalore.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (2,'Infosys Chennai','Chennai','dc-images/Chennai.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (3,'Infosys Pune','Pune','dc-images/pune.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (4,'Infosys Bhubaneswar','Bhubaneswar','dc-images/Bhubaneswar.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (5,'Infosys Chandigarh','Chandigarh','dc-images/chandigarh.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (6,'Infosys Gurgaon','Gurgaon','dc-images/gurgaon.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (7,'Infosys Hyderabad','Hyderabad','dc-images/hyderabad.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (8,'Infosys Jaipur','Jaipur','dc-images/jaipur.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (9,'Infosys Mysuru','Mysuru','dc-images/Mysore.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (10,'Infosys Mangaluru','Mangaluru','dc-images/Mangalore.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (11,'Infosys Mumbai','Mumbai','dc-images/mumbai.jpg');
+INSERT INTO `dc_table` (`dc_Id`,`dc_Name`,`dc_Location`,`dc_image_url`) VALUES (12,'Infosys Thiruvananthapuram','Thiruvananthapuram','dc-images/Thiruvananthapuram.jpg');
+
+
+insert into Menu_Table(menu_Name,menu_Description,menu_price,menu_image_url,vend_Id) values ('Panjabi paneer','Paneer curry',90,'dc-images/bangalore.jpg',2);
+
+insert into Menu_Table(menu_Name,menu_Description,menu_price,menu_image_url,vend_Id) values ('Panjabi chilly paneer','Paneer pieces',110,'dc-images/chennai.jpg',3);
+
+insert into Menu_Table(menu_Name,menu_Description,menu_price,menu_image_url,vend_Id) values ('Panjabi paneer masala','Paneer curry',120,'dc-images/pune.jpg',4);
+
+insert into Menu_Table(menu_Name,menu_Description,menu_price,menu_image_url,vend_Id) values ('Panjabi shahi paneer ','Paneer curry',140,'dc-images/chandigarh.jpg',5);
+
+
+insert into vendor_table (vend_Name, vend_Description,dc_Id) values ('Gujrati2','Gujrati2',2);
