@@ -16,12 +16,20 @@
 <body>
 	<div class="container">
 		<h2>Vendor List</h2>
-		<p>This is Admin Page - Click On Vendor Name</p>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">Admin Page - List Of Vendors</div>
+				<div class="col-md-6">
+					<span class="pull-right"><button type="button"
+							class="btn btn-info">Default</button></span>
+				</div>
+			</div>
+		</div>
 		<div class="table-responsive">
 			<table class="table table-striped table-hover table-users">
 				<thead>
 					<tr>
-						<th>ID</th>
+						<th></th>
 						<th>Name</th>
 						<th>Description</th>
 						<th>Location</th>
@@ -33,9 +41,9 @@
 				<tbody>
 					<c:forEach items="${vendorlist}" var="vendor">
 						<tr>
-							<td>${vendor.vendId}</td>
-							<td><a href="<c:url value='menulist/${vendor.vendId}' />">${vendor.vendName}
-							</a></td>
+							<td><a href="<c:url value='menulist/${vendor.vendId}' />"><span
+									class="glyphicon glyphicon-search"></span> </a></td>
+							<td>${vendor.vendName}</td>
 							<td>${vendor.vendDescription}</td>
 							<td>${vendor.dcModel.dcLocation}</td>
 							<td>${vendor.isActive}</td>
@@ -65,10 +73,51 @@
 					</div>
 					<div class="modal-body">
 						<form class="form-horizontal" role="form">
-							<label class="label" for="name">Vendor Name</label><br> <input
-								type="text" name="name" class="input-xlarge"><br> <label
-								class="label" for="decsription">Vendor Description</label><br>
-							<input type="text" name="decsription" class="input-xlarge"><br>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="vendorName">Name</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="vendorName"
+										placeholder="Vendor Name" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="vendorDiscription">Description</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="vendorDiscription"
+										placeholder="Vendor Discription" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="isActive">Is
+									Active</label>
+								<div class="col-sm-10 dropdown">
+									<button class="btn btn-default dropdown-toggle" type="button"
+										data-toggle="dropdown">
+										Is Active <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Yes</a></li>
+										<li><a href="#">No</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="vendorLocation">Location</label>
+								<div class="col-sm-10 dropdown">
+									<button class="btn btn-default dropdown-toggle" type="button"
+										data-toggle="dropdown">
+										Location <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Bangalore</a></li>
+										<li><a href="#">Chennai</a></li>
+										<li><a href="#">Hydrabad</a></li>
+										<li><a href="#">Pune</a></li>
+										<li><a href="#">Mysore</a></li>
+										<li><a href="#">Mumbai</a></li>
+									</ul>
+								</div>
+							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
