@@ -35,4 +35,11 @@ public class VendorServiceImpl implements VendorService{
 		return this.vendorDao.getDcListForAdmin();
 	}
 
+	@Transactional
+	public void saveVendor(String vendorName, String vendorDiscription,
+			Boolean isActive, Integer vendorLocation) {
+		this.vendorDao.getDcListForAdmin(vendorName, vendorDiscription,isActive, vendorLocation);
+		
+	}
+
 }
