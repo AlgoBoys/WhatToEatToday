@@ -20,9 +20,17 @@ public class VendorController {
 	}
 
 	@RequestMapping(value = "/foodies/vendorlist/{id}", method = RequestMethod.GET)
-	public String getDcList(@PathVariable int id,ModelMap model) {
-		model.addAttribute("vendorlist", this.vendorService.getVendorList(id));
+	public String getVendorList(@PathVariable int dcid,ModelMap model) {
+		model.addAttribute("vendorlist", this.vendorService.getVendorList(dcid));
 		return "foodies/vendorlist";
+	}
+	
+	
+	
+	@RequestMapping(value = "/admin/vendorlist", method = RequestMethod.GET)
+	public String getgetVendorListForAdmin(ModelMap model) {
+		model.addAttribute("vendorlist", this.vendorService.getDcListForAdmin());
+		return "admin/vendorlist";
 	}
 
 }
