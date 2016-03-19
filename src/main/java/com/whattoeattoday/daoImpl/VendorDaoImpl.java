@@ -48,4 +48,11 @@ public class VendorDaoImpl implements VendorDao {
 		return vendorList;
 	}
 
+	public void getDcListForAdmin(String vendorName, String vendorDiscription,
+			Boolean isActive, Integer vendorLocation) {
+		Session session = this.sessionFactory.getCurrentSession();
+		
+		
+	}
+
 }
