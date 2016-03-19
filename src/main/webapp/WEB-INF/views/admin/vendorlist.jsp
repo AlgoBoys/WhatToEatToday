@@ -36,7 +36,7 @@
 						<th>Is Active</th>
 						<th>Edit</th>
 						<th>Delete</th>
-					</tr>
+					</tr> 
 				</thead>
 				<tbody>
 					<c:forEach items="${vendorlist}" var="vendor">
