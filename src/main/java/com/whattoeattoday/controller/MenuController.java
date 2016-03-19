@@ -20,9 +20,15 @@ public class MenuController {
 	}
 
 	@RequestMapping(value = "/foodies/menulist/{id}", method = RequestMethod.GET)
-	public String getMenuList(@PathVariable int id, ModelMap model) {
+	public String getMenuListForFoodies(@PathVariable int id, ModelMap model) {
 		model.addAttribute("menulist", this.menuService.getMenuList(id));
 		return "foodies/menulist";
+	}
+	
+	@RequestMapping(value = "/vendor/menulist/{id}", method = RequestMethod.GET)
+	public String getMenuListForVendor(@PathVariable int id, ModelMap model) {
+		model.addAttribute("menulist", this.menuService.getMenuList(id));
+		return "vendor/menulist";
 	}
 
 }
