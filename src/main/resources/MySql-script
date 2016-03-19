@@ -107,7 +107,7 @@ i_fat_g int not null,
 i_carbo_g int not null,
 i_protein_g int not null
 );
-
+ 
 
 
 INSERT INTO `ingredients_table` (`i_Id`,`i_Food`,`i_weight`,`i_Kcal`,`i_fat_g`,`i_carbo_g`,`i_protein_g`) VALUES (1,'wheat',100,327,2,71,13);
