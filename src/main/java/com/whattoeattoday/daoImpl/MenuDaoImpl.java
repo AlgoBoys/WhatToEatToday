@@ -30,7 +30,7 @@ public class MenuDaoImpl implements MenuDao {
 	public List<MenuModel> getMenuList(int id) {
 		Session session = this.sessionFactory.getCurrentSession();
 		List<MenuModel> menuList = session.createQuery(
-				"from MenuModel m where m.vendorModel = " + id).list();
+				"from MenuModel m where m.vendorModel = " + id + " order by m.isLunch").list();
 		for (MenuModel menu : menuList) {
 			logger.info("Menu List::" + menu);
 		}
