@@ -7,26 +7,27 @@
 <title>DC List</title>
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+<title>Modern Business - Start Bootstrap Template</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../resources/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="../resources/css/modern-business.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="../resources/css/modern-business.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="../resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link href="../resources/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -35,131 +36,140 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        
-        <!-- /.container -->
-    </nav>
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-    <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+		<!-- /.container -->
+	</nav>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('../resources/images/slides/slide01.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('../resources/images/slides/slide02.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('../resources/images/slides/slide03.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2></h2>
-                </div>
-            </div>
-        </div>
+	<!-- Header Carousel -->
+	<header id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </header>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<div class="fill"
+					style="background-image: url('../resources/images/slides/slide01.jpg');"></div>
+				<div class="carousel-caption">
+					<h2></h2>
+				</div>
+			</div>
+			<div class="item">
+				<div class="fill"
+					style="background-image: url('../resources/images/slides/slide02.jpg');"></div>
+				<div class="carousel-caption">
+					<h2></h2>
+				</div>
+			</div>
+			<div class="item">
+				<div class="fill"
+					style="background-image: url('../resources/images/slides/slide03.jpg');"></div>
+				<div class="carousel-caption">
+					<h2></h2>
+				</div>
+			</div>
+		</div>
 
-    <!-- Page Content -->
-    <div class="container">
+		<!-- Controls -->
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="icon-prev"></span>
+		</a> <a class="right carousel-control" href="#myCarousel"
+			data-slide="next"> <span class="icon-next"></span>
+		</a>
+	</header>
 
-        <!-- Marketing Icons Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Choose Your DC To Find Today's Food
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
+	<!-- Page Content -->
+	<div class="container">
 
-        <!-- Portfolio Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Infosys DCs</h2>
-                <!-- <h2><em>Infosys DCs</em>Choose your DC to find your Today's Food</h2> -->
-            </div>
-            <c:if test="${!empty dclist}">
-            <c:forEach items="${dclist}" var="dc">
-            
-            <c:out value="">${dc.dcImageUrl}</c:out>
-            <div class="col-md-4 col-sm-6">
-            ${dc.dcName}
-                <a href="<c:url value='/foodies/vendorlist/${dc.dcId}' />">
-                    <img class="img-responsive img-portfolio img-hover" src="../resources/images/${dc.dcImageUrl}" alt="">
-                </a>
-                
-            </div>
-            </c:forEach>
-            </c:if>
-        </div>
-        <!-- /.row -->
+		<!-- Marketing Icons Section -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Choose Your DC To Find Today's Food</h1>
+			</div>
+		</div>
+		<!-- /.row -->
 
-        <!-- Features Section -->
-        
-        <!-- /.row -->
+		<!-- Portfolio Section -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h2 class="page-header">Infosys DCs</h2>
+				<!-- <h2><em>Infosys DCs</em>Choose your DC to find your Today's Food</h2> -->
+			</div>
+			<c:if test="${!empty dclist}">
+				<c:forEach items="${dclist}" var="dc">
 
-        <hr>
+					<c:out value="">${dc.dcImageUrl}</c:out>
+					<div class="col-md-4 col-sm-6">
+						<table cellspacing="5">
+							<tr>
+								<td height="360" width="460">${dc.dcName}<br />
+								<a href="<c:url value='/foodies/vendorlist/${dc.dcId}' />">
+										<img style="vertical-align: bottom; display: block;"
+										height=auto max-width="100%" width=auto
+										class="img-responsive img-portfolio img-hover"
+										src="../resources/images/${dc.dcImageUrl}" alt="">
+								</a></td>
+							</tr>
+						</table>
+					</div>
+				</c:forEach>
+			</c:if>
+		</div>
+		<!-- /.row -->
 
-        <!-- Call to Action Section -->
-        <div class="well">
-            <div class="row">
-                <div class="col-md-8">
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p> -->
-                    <h2><em>Our </em>aim is to keep you healthy</h2>
-                    
-                </div>
-                
-            </div>
-        </div>
+		<!-- Features Section -->
 
-        <hr>
+		<!-- /.row -->
 
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; WhatToEatToday 2016</p>
-                </div>
-            </div>
-        </footer>
+		<hr>
 
-    </div>
-    <!-- /.container -->
+		<!-- Call to Action Section -->
+		<div class="well">
+			<div class="row">
+				<div class="col-md-8">
+					<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p> -->
+					<h2>
+						<em>Our </em>aim is to keep you healthy
+					</h2>
 
-    <!-- jQuery -->
-    <script src="../resources/js/jquery.js"></script>
+				</div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../resources/js/bootstrap.min.js"></script>
+			</div>
+		</div>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 3000 //changes the speed
-    })
-    </script>
+		<hr>
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Copyright &copy; WhatToEatToday 2016</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="../resources/js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../resources/js/bootstrap.min.js"></script>
+
+	<!-- Script to Activate the Carousel -->
+	<script>
+		$('.carousel').carousel({
+			interval : 3000
+		//changes the speed
+		})
+	</script>
 
 </body>
 
