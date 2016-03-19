@@ -45,6 +45,17 @@ public class VendorModel {
 	@OneToMany(mappedBy = "vendorModel")
 	private Set<MenuModel> menu;
 
+	public VendorModel() {
+	}
+
+	public VendorModel(String vendName, String vendDescription,
+			Boolean isActive, DCModel dcModel) {
+		this.vendName = vendName;
+		this.vendDescription = vendDescription;
+		this.isActive = isActive;
+		this.dcModel = dcModel;
+	}
+
 	public int getVendId() {
 		return vendId;
 	}
