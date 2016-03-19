@@ -37,4 +37,15 @@ public class VendorDaoImpl implements VendorDao {
 		return vendorList;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<VendorModel> getDcListForAdmin() {
+		Session session = this.sessionFactory.getCurrentSession();
+		List<VendorModel> vendorList = session
+				.createQuery("from VendorModel v").list();
+		for (VendorModel vendor : vendorList) {
+			logger.info("Vendor List::" + vendor);
+		}
+		return vendorList;
+	}
+
 }
