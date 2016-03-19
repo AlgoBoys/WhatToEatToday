@@ -2,67 +2,51 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
-<html>
+<html lang="en">
 <head>
-<title>Vendor List</title>
-<style type="text/css">
-.tg {
-	border-collapse: collapse;
-	border-spacing: 0;
-	border-color: #ccc;
-}
-
-.tg td {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	padding: 10px 5px;
-	border-style: solid;
-	border-width: 1px;
-	overflow: hidden;
-	word-break: normal;
-	border-color: #ccc;
-	color: #333;
-	background-color: #fff;
-}
-
-.tg th {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	font-weight: normal;
-	padding: 10px 5px;
-	border-style: solid;
-	border-width: 1px;
-	overflow: hidden;
-	word-break: normal;
-	border-color: #ccc;
-	color: #333;
-	background-color: #f0f0f0;
-}
-
-.tg .tg-4eph {
-	background-color: #f9f9f9
-}
-</style>
+<title>Vendor List For Your DC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h3>Vendor List</h3>
-	<c:if test="${!empty vendorlist}">
-		<table class="tg">
-			<tr>
-				<th width="120">Vendor Name - Click Here</th>
-				<th width="120">Vendor Description</th>
-				<th width="120">Vendor Location</th>
-			</tr>
-			<c:forEach items="${vendorlist}" var="vendor">
-				<tr>
-					<td align="right" bgcolor="lightgreen"><a
-						href="<c:url value='menulist/${vendor.vendId}' />">${vendor.vendName}
-					</a></td>
-					<td>${vendor.vendDescription}</td>
-					<td>${vendor.dcModel.dcLocation}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</c:if>
+	<div class="container">
+		<h2>Vendor List For Your DC</h2>
+		
+		<div class="table-responsive">
+			<table class="table table-striped table-hover table-users">
+				<thead>
+					<tr>
+						<th></th>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Description</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${vendorlist}" var="vendor">
+						<tr>
+							<td><a href="<c:url value='../menulist/${vendor.vendId}' />"><span
+									class="glyphicon glyphicon-search"></span> </a></td>
+							<td>${vendor.vendId}</td>
+							<td>${vendor.vendName}
+							</td>
+							<td>${vendor.vendDescription}</td>
+							
+
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+
+
+		
+	</div>
 </body>
 </html>

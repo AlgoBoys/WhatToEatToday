@@ -4,7 +4,7 @@
 <%@ page session="false"%>
 <html>
 <head>
-<title>DC List</title>
+<title>Menu List</title>
 <style type="text/css">
 .tg {
 	border-collapse: collapse;
@@ -73,13 +73,13 @@
 </style>
 </head>
 <body>
-	<h3>DC List</h3>
+	<h3>Menu List</h3>
 	<c:if test="${!empty menulist}">
-		<table class="tg"
+		<center><table class="tg"
 			style="border-collapse: separate; border-spacing: 20px; border-width: 0px">
 			<tr>
-				<th class="veg" bgcolor="#298A08">vegetarian</th>
-				<th class="nonveg" bgcolor="#FF0000">Non vegetarian</th>
+				<th class="veg" bgcolor="#298A08">Veg Menu</th>
+				<th class="nonveg" bgcolor="#FF0000">Non-veg Menu</th>
 			</tr>
 			<tr>
 				<td>
@@ -93,8 +93,8 @@
 												<strong>${menu.menuName}</strong>
 											</div>
 											<div align="center"
-												style="float: right; width: 10%; background-color: #298A08; color: white">
-												${menu.menuprice}</div>
+												style="float: right; width: 20%; background-color: #298A08; color: white">
+												&#x20B9;${menu.menuprice}</div>
 										</div> <br />
 										<p>
 											<font face="verdana">${menu.menuDescription}</font>
@@ -113,14 +113,13 @@
 									<td>
 										<div>
 											<div style="float: left; width: 80%;">
-												<strong>Chicken Masala</strong>
+												<strong>${menu.menuName}</strong>
 											</div>
 											<div align="center"
-												style="float: right; width: 10%; background-color: #FF0000; color: white">90</div>
+												style="float: right; width: 20%; background-color: #FF0000; color: white">&#x20B9;${menu.menuprice}</div>
 										</div> <br />
 										<p>
-											<font face="verdana">1 Blowl Chicken Masala, 3 Tandori
-												Roti, Green Salad</font>
+											<font face="verdana">${menu.menuDescription}</font>
 										</p>
 									</td>
 								</tr>
@@ -130,6 +129,7 @@
 				</td>
 			</tr>
 		</table>
+		</center>
 	</c:if>
 </body>
 </html>
