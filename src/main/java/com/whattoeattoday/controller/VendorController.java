@@ -6,6 +6,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.whattoeattoday.service.VendorService;
 
@@ -31,6 +33,16 @@ public class VendorController {
 	public String getVendorListForAdmin(ModelMap model) {
 		model.addAttribute("vendorlist", this.vendorService.getDcListForAdmin());
 		return "admin/vendorlist";
+	}
+	
+	@RequestMapping(value = "/admin/addvendor", method = RequestMethod.POST)
+	public @ResponseBody
+	boolean saveVendor(@RequestParam("vendorName") String vendorName,
+			@RequestParam("vendorDiscription") String vendorDiscription,
+			@RequestParam("isActive") Boolean isActive,
+			@RequestParam("vendorLocation") Integer vendorLocation) {
+			this.vendorService.saveVendor(vendorName, vendorDiscription,isActive, vendorLocation);
+		return true;
 	}
 
 }
