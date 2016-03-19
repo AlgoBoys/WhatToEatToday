@@ -39,7 +39,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${vendorlist}" var="vendor"> 
+					<c:forEach items="${vendorlist}" var="vendor">
 						<tr>
 							<td><a href="<c:url value='menulist/${vendor.vendId}' />"><span
 									class="glyphicon glyphicon-search"></span> </a></td>
