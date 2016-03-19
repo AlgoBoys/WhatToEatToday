@@ -14,4 +14,7 @@ public interface VendorDao {
 	public List<VendorModel> getVendorList(int id);
 
 	public List<VendorModel> getDcListForAdmin();
+
+	public void getDcListForAdmin(String vendorName, String vendorDiscription,
+			Boolean isActive, Integer vendorLocation);
 }
