@@ -30,4 +30,9 @@ public class VendorServiceImpl implements VendorService{
 		return this.vendorDao.getVendorList(id);
 	}
 
+	@Transactional
+	public List<VendorModel> getDcListForAdmin() {
+		return this.vendorDao.getDcListForAdmin();
+	}
+
 }
