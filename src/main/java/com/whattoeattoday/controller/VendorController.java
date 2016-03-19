@@ -19,7 +19,7 @@ public class VendorController {
 		this.vendorService = vendorService;
 	}
 
-	@RequestMapping(value = "/foodies/vendorlist/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/vendorlist/{id}", method = RequestMethod.GET)
 	public String getVendorList(@PathVariable int dcid,ModelMap model) {
 		model.addAttribute("vendorlist", this.vendorService.getVendorList(dcid));
 		return "foodies/vendorlist";
