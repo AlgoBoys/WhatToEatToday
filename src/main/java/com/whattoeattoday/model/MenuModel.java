@@ -36,7 +36,7 @@ public class MenuModel {
 	private Boolean isLunch;
 
 	@Column(name = "Is_Veg")
-	private Boolean isVeg;
+	private Boolean isVeg = false;
 
 	@Column(name = "Is_Active")
 	private Boolean isActive;
