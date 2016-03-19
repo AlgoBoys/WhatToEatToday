@@ -10,5 +10,8 @@ import com.whattoeattoday.model.VendorModel;
  * 
  */
 public interface VendorDao {
+	
 	public List<VendorModel> getVendorList(int id);
+
+	public List<VendorModel> getDcListForAdmin();
 }
