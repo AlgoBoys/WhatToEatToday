@@ -165,3 +165,71 @@ FOREIGN KEY (menuId) REFERENCES menu_table(menu_Id)
 
 alter table User_History_Table
 add column dateOfEat date;
+
+
+
+
+CREATE TABLE Recomendation_Table
+(
+r_Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+r_Gender varchar(10) NOT NULL,
+i_low_age int not null,
+i_up_age int not null,
+i_low_bodyweight int not null,
+i_up_bodyweight int not null,
+i_Kcal int not null,
+i_fat_g int not null,
+i_carbo_g int not null,
+i_protein_g int not null
+);
+
+
+
+INSERT INTO `Recomendation_Table` (`r_Id`,`r_Gender`,`i_low_age`,`i_up_age`,`i_low_bodyweight`,`i_up_bodyweight`,`i_Kcal`,`i_fat_g`,`i_carbo_g`,`i_protein_g`) VALUES (1,'male',20,40,40,70,1800,500,800,600);
+INSERT INTO `Recomendation_Table` (`r_Id`,`r_Gender`,`i_low_age`,`i_up_age`,`i_low_bodyweight`,`i_up_bodyweight`,`i_Kcal`,`i_fat_g`,`i_carbo_g`,`i_protein_g`) VALUES (2,'female',20,40,40,70,2000,800,900,700);
+
+
+
+
+
+
+CREATE TABLE User_History_Table
+(
+h_Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+userId int NOT NULL,
+menuId int not null,
+i_Kcal int not null,
+i_fat_g int not null,
+i_carbo_g int not null,
+i_protein_g int not null,
+FOREIGN KEY (userId) REFERENCES users(id),
+FOREIGN KEY (menuId) REFERENCES menu_table(menu_Id)
+);
+
+alter table User_History_Table
+add column dateOfEat date;
+
+
+drop table menu_ingredients_quantity_table;
+
+CREATE TABLE Menu_Ingredients_Quantity_Table
+(
+q_Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+menu_Id int,
+i_id int,
+i_amount_ingram int NOT NULL,
+FOREIGN KEY (menu_Id) REFERENCES Menu_Table(menu_Id),
+FOREIGN KEY (i_id) REFERENCES ingredients_table(i_Id)
+);
+
+/*
+-- Query: SELECT * FROM whattoeattoday.menu_ingredients_quantity_table
+LIMIT 0, 1000
+
+-- Date: 2016-03-20 00:28
+*/
+INSERT INTO `menu_ingredients_quantity_table` (`q_Id`,`menu_Id`,`i_id`,`i_amount_ingram`) VALUES (1,1,1,60);
+INSERT INTO `menu_ingredients_quantity_table` (`q_Id`,`menu_Id`,`i_id`,`i_amount_ingram`) VALUES (2,1,14,30);
+INSERT INTO `menu_ingredients_quantity_table` (`q_Id`,`menu_Id`,`i_id`,`i_amount_ingram`) VALUES (3,1,15,10);
+INSERT INTO `menu_ingredients_quantity_table` (`q_Id`,`menu_Id`,`i_id`,`i_amount_ingram`) VALUES (4,1,16,5);
+INSERT INTO `menu_ingredients_quantity_table` (`q_Id`,`menu_Id`,`i_id`,`i_amount_ingram`) VALUES (5,1,21,25);

@@ -1,5 +1,7 @@
 package com.whattoeattoday.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -49,6 +52,12 @@ public class MenuModel {
 	@ManyToOne
 	@JoinColumn(name = "vend_Id")
 	private VendorModel vendorModel;
+
+	@OneToMany(mappedBy = "menuModel")
+	private Set<MenuIngrediantsQuantityTable> menuIngrediantsQuantityTables;
+
+	@OneToMany(mappedBy = "menuId")
+	private Set<UserHistory> userHistories;
 
 	public int getMenuId() {
 		return menuId;
@@ -120,6 +129,23 @@ public class MenuModel {
 
 	public void setVendorModel(VendorModel vendorModel) {
 		this.vendorModel = vendorModel;
+	}
+
+	public Set<MenuIngrediantsQuantityTable> getMenuIngrediantsQuantityTables() {
+		return menuIngrediantsQuantityTables;
+	}
+
+	public void setMenuIngrediantsQuantityTables(
+			Set<MenuIngrediantsQuantityTable> menuIngrediantsQuantityTables) {
+		this.menuIngrediantsQuantityTables = menuIngrediantsQuantityTables;
+	}
+
+	public Set<UserHistory> getUserHistories() {
+		return userHistories;
+	}
+
+	public void setUserHistories(Set<UserHistory> userHistories) {
+		this.userHistories = userHistories;
 	}
 
 }

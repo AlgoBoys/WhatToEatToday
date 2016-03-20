@@ -13,4 +13,6 @@ public interface MenuDao {
 	
 	public List<MenuModel> getMenuList(int id);
 
+	public MenuModel getMenu(int id);
+
 }

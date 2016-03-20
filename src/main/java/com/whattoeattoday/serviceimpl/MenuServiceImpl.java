@@ -25,4 +25,9 @@ public class MenuServiceImpl implements MenuService {
 		return this.menuDao.getMenuList(id);
 	}
 
+	@Transactional
+	public MenuModel getMenu(int id) {
+		return this.menuDao.getMenu(id);
+	}
+
 }

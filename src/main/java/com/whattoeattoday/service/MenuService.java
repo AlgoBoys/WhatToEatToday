@@ -13,4 +13,6 @@ public interface MenuService {
 
 	public List<MenuModel> getMenuList(int id);
 
+	public MenuModel getMenu(int id);
+
 }
