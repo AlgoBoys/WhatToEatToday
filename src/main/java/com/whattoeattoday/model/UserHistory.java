@@ -22,11 +22,11 @@ public class UserHistory {
 
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	private User user;
+	private User userId;
 
 	@ManyToOne
 	@JoinColumn(name = "menuId")
-	private MenuModel menu;
+	private MenuModel menuId;
 
 	@Column(name = "i_Kcal")
 	private Integer i_Kcal;
@@ -51,20 +51,22 @@ public class UserHistory {
 		this.id = id;
 	}
 
-	public User getUser() {
-		return user;
+	
+
+	public User getUserId() {
+		return userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserId(User userId) {
+		this.userId = userId;
 	}
 
-	public MenuModel getMenu() {
-		return menu;
+	public MenuModel getMenuId() {
+		return menuId;
 	}
 
-	public void setMenu(MenuModel menu) {
-		this.menu = menu;
+	public void setMenuId(MenuModel menuId) {
+		this.menuId = menuId;
 	}
 
 	public Integer getI_Kcal() {
